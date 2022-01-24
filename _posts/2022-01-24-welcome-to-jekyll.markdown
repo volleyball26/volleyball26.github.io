@@ -156,3 +156,59 @@ if __name__ == '__main__':
 
     seq_list.traversal()
 ```
+## 双链表
+### 为什么要有双链表
+单链表的指向是单向的，如果要访问当前节点的上一个节点，则需要从表头重新开始便利。为了更方便的访问当前节点的前驱节点， 引入了双链表
+rvm install 2.6.3 --disable-binary
+### 存储结构
+双链表就是在单链表的基础上增加了一个指针， 该指针指向前驱节点。这样形成的链表有两个不同方向的链，故称为双链表。
+
+### 基本操作
+### 双链表节点定义
+```py
+class None:
+    def __init__(self, val):
+        # 存放节点的数据域
+        self.val = val
+        # 前驱指针
+        self.prev = None
+        # 后继指针
+        self.next = None
+```
+### 双链表初始化
+```py
+class DoubleLinkedList:
+    def __init__(self):
+        """[双链表初始化]
+        """
+        # 声明头指针，将头指针指向空
+        self.head = None
+        # 声明尾指针，将尾指针指向空
+        self.tail = None
+```
+### 判断双链表是否为空
+```py
+def empty(self):
+    return self.head is None
+```
+### 获取链表长度
+```py
+def length(self):
+    size = 0
+    cur = self.head
+    while cur != None:
+        size += 1
+        cur = cur.next
+    return size
+```
+## 循环链表
+### 存储结构
+### 基本操作
+```py
+```
+
+## 链表的应用
+### 存储结构
+### 基本操作
+```py
+```
