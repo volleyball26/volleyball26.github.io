@@ -166,7 +166,7 @@ rvm install 2.6.3 --disable-binary
 ### 基本操作
 ### 双链表节点定义
 ```py
-class None:
+class Node:
     def __init__(self, val):
         # 存放节点的数据域
         self.val = val
@@ -201,6 +201,79 @@ def length(self):
         cur = cur.next
     return size
 ```
+### 头插法
+```py
+def prepend(self, val):
+    """[头部插入]
+
+    Args:
+        val ([any]): [插入的值]
+    """
+    newNode = Node(val)
+    if self.empty():
+        self.head = newNode
+        self.tail = newNode
+    else:
+        self.head.prev = newNode
+        newNode.next = self.head
+        self.head = newNode
+
+```
+### 任意位置插入数据
+```py
+def insert(self, index, val):
+    """[在链表任意位置添加节点,若该任意位置为index,即在第index个节点后插入元素]
+
+    Args:
+        index ([int]): [位置下标]
+        val ([any]): [关键字]
+    """
+    newNode = Node(val)
+    # 声明pre指针
+    pre = self.head
+    # 通过pre指针遍历到链表中第index个节点
+    for _ in range(index-1):
+        pre = pre.next
+    # 第index个节点的后继节点
+    node_next = pre.next
+    # 将新节点的后继指针指向链表中第index+1个节点
+    newNode.next = next
+    # 链表中第index+1个节点的前驱指针指向新节点
+    node_next.prev = newNode
+    # 第index个节点的后继指针指向新节点
+    pre.next = newNode
+    # 新节点的前驱指针指向链表中第index个节点
+    newNode.prev = pre
+```
+### 删除表头节点
+```py
+def del_first(self):
+    """[删除表头节点]
+    """
+    if self.empty():
+        raise IndexError("下标不合法")
+    else:
+        self.head = self.head.next
+        self.head.prev = None
+```
+### 删除任意位置节点
+```py
+def delete(self, index):
+    """[删除链表中任意位置节点]
+
+    Args:
+        index ([int]): [删除下标为index的结果,表头节点下标为0]
+    """
+    pre = self.head
+    for _ in range(index-1):
+        pre = pre.next
+    pre.next = pre.next.next
+    pre.next.prev = pre
+```
+### 在链表中查找元素
+
+
+
 ## 循环链表
 ### 存储结构
 ### 基本操作
