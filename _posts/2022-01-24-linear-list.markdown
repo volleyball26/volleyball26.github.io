@@ -159,7 +159,6 @@ if __name__ == '__main__':
 ## 双链表
 ### 为什么要有双链表
 单链表的指向是单向的，如果要访问当前节点的上一个节点，则需要从表头重新开始便利。为了更方便的访问当前节点的前驱节点， 引入了双链表
-rvm install 2.6.3 --disable-binary
 ### 存储结构
 双链表就是在单链表的基础上增加了一个指针， 该指针指向前驱节点。这样形成的链表有两个不同方向的链，故称为双链表。
 
@@ -271,7 +270,23 @@ def delete(self, index):
     pre.next.prev = pre
 ```
 ### 在链表中查找元素
+```py
+def find(self, key):
+    """[summary]
 
+    Args:
+        key ([any]): [关键字key]
+
+    Returns:
+        [bool]: [查找结果]
+    """
+    cur = self.head
+    while cur.next != None:
+        if cur.val == key:
+            return True
+        cur = cur.next
+    return False
+```
 
 
 ## 循环链表
