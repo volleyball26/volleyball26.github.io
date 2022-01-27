@@ -255,6 +255,18 @@ def del_first(self):
         self.head = self.head.next
         self.head.prev = None
 ```
+### 删除表尾节点
+```py
+def del_last(self):
+    if self.empty():
+        raise IndexError("下标不合法")
+    # 链表不为空
+    # 将尾指针指向尾节点的前驱节点
+    self.tail = self.tail.prev
+    # 将倒数第二个节点的后继指针指向空,称为新的尾节点
+    self.tail.next = None
+```
+
 ### 删除任意位置节点
 ```py
 def delete(self, index):
@@ -288,7 +300,16 @@ def find(self, key):
     return False
 ```
 
-
+### 遍历双链表
+```py
+def traversal(self):
+    # 遍历数组
+    cur = self.head
+    while cur.next != None:
+        print(cur.val, end=' ')
+        cur = cur.next
+        print()
+```
 ## 循环链表
 ### 存储结构
 ### 基本操作
