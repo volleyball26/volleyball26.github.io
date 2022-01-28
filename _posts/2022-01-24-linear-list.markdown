@@ -22,7 +22,7 @@ categories: jekyll update
  - 数据元素之间的关系是以元素在计算机内部的“物理位置相邻”来体现的
 ### 基本操作
 
-```python
+```pythonthon
 class SequenceList:
 
     def __init__(self, max):
@@ -163,8 +163,8 @@ if __name__ == '__main__':
 双链表就是在单链表的基础上增加了一个指针， 该指针指向前驱节点。这样形成的链表有两个不同方向的链，故称为双链表。
 
 ### 基本操作
-### 双链表节点定义
-```py
+#### 双链表节点定义
+```python
 class Node:
     def __init__(self, val):
         # 存放节点的数据域
@@ -174,8 +174,8 @@ class Node:
         # 后继指针
         self.next = None
 ```
-### 双链表初始化
-```py
+#### 双链表初始化
+```python
 class DoubleLinkedList:
     def __init__(self):
         """[双链表初始化]
@@ -185,13 +185,13 @@ class DoubleLinkedList:
         # 声明尾指针，将尾指针指向空
         self.tail = None
 ```
-### 判断双链表是否为空
-```py
+#### 判断双链表是否为空
+```python
 def empty(self):
     return self.head is None
 ```
-### 获取链表长度
-```py
+#### 获取链表长度
+```python
 def length(self):
     size = 0
     cur = self.head
@@ -200,8 +200,8 @@ def length(self):
         cur = cur.next
     return size
 ```
-### 头插法
-```py
+#### 头插法
+```python
 def prepend(self, val):
     """[头部插入]
 
@@ -218,8 +218,8 @@ def prepend(self, val):
         self.head = newNode
 
 ```
-### 任意位置插入数据
-```py
+#### 任意位置插入数据
+```python
 def insert(self, index, val):
     """[在链表任意位置添加节点,若该任意位置为index,即在第index个节点后插入元素]
 
@@ -244,8 +244,8 @@ def insert(self, index, val):
     # 新节点的前驱指针指向链表中第index个节点
     newNode.prev = pre
 ```
-### 删除表头节点
-```py
+#### 删除表头节点
+```python
 def del_first(self):
     """[删除表头节点]
     """
@@ -255,8 +255,8 @@ def del_first(self):
         self.head = self.head.next
         self.head.prev = None
 ```
-### 删除表尾节点
-```py
+#### 删除表尾节点
+```python
 def del_last(self):
     if self.empty():
         raise IndexError("下标不合法")
@@ -267,8 +267,8 @@ def del_last(self):
     self.tail.next = None
 ```
 
-### 删除任意位置节点
-```py
+#### 删除任意位置节点
+```python
 def delete(self, index):
     """[删除链表中任意位置节点]
 
@@ -281,8 +281,8 @@ def delete(self, index):
     pre.next = pre.next.next
     pre.next.prev = pre
 ```
-### 在链表中查找元素
-```py
+#### 在链表中查找元素
+```python
 def find(self, key):
     """[summary]
 
@@ -300,8 +300,8 @@ def find(self, key):
     return False
 ```
 
-### 遍历双链表
-```py
+#### 遍历双链表
+```python
 def traversal(self):
     # 遍历数组
     cur = self.head
@@ -313,11 +313,11 @@ def traversal(self):
 ## 循环链表
 ### 存储结构
 ### 基本操作
-```py
+```python
 ```
 
 ## 链表的应用
 ### 存储结构
 ### 基本操作
-```py
+```python
 ```
